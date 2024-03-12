@@ -45,4 +45,4 @@ RUN pip install -r requirements.txt
 # RUN chmod +x scripts/download_models.sh && scripts/download_models.sh
 
 # ENTRYPOINT ["python3", "inference.py"]
-CMD webui.sh
+CMD ["/app/webui.sh"]
