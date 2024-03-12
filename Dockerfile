@@ -44,5 +44,5 @@ RUN pip install -r requirements.txt
 # Download models using the provided script
 # RUN chmod +x scripts/download_models.sh && scripts/download_models.sh
 
-ENTRYPOINT ["python3", "inference.py"]
+# ENTRYPOINT ["python3", "inference.py"]
 CMD webui.sh
