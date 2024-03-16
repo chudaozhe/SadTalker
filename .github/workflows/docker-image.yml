@@ -19,7 +19,6 @@ jobs:
         env:
           IMAGE_TAG: ${{ github.sha }} # 用于标记容器版本号
         run: |
-#          docker build -f Dockerfile -t registry.cn-hangzhou.aliyuncs.com/cuiw/sadtalker:$IMAGE_TAG .
           docker pull pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime
           docker tag pytorch/pytorch:2.0.1-cuda11.7-cudnn8-runtime registry.cn-hangzhou.aliyuncs.com/cuiw/pytorch:2.0.1-cuda11.7-cudnn8-runtime
           docker push registry.cn-hangzhou.aliyuncs.com/cuiw/pytorch:2.0.1-cuda11.7-cudnn8-runtime
