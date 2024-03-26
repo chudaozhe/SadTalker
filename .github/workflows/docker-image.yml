@@ -19,5 +19,6 @@ jobs:
         env:
           IMAGE_TAG: ${{ github.sha }} # 用于标记容器版本号
         run: |
-          docker build -f Dockerfile -t registry.cn-hangzhou.aliyuncs.com/cuiw/pytorch:$IMAGE_TAG .
-          docker push registry.cn-hangzhou.aliyuncs.com/cuiw/pytorch:$IMAGE_TAG
+          docker pull ultralytics/ultralytics:8.1.34
+          docker tag ultralytics/ultralytics:8.1.34 registry.cn-hangzhou.aliyuncs.com/cuiw/pytorch:ultralytics8.1.34
+          docker push registry.cn-hangzhou.aliyuncs.com/cuiw/pytorch:ultralytics8.1.34
