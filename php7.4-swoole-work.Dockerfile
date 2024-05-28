@@ -1,4 +1,5 @@
 FROM php:7.4-fpm
+ADD swoole_loader74.so /usr/local/lib/php/extensions/no-debug-non-zts-20190902/
 RUN apt-get update && apt-get install -y git procps inetutils-ping net-tools unzip \
         libfreetype6-dev \
         libjpeg62-turbo-dev \
@@ -19,7 +20,7 @@ RUN apt-get update && apt-get install -y git procps inetutils-ping net-tools unz
     && curl -sfL https://getcomposer.org/installer | php -- --install-dir=/usr/bin --filename=composer \
     && chmod +x /usr/bin/composer \
     && composer self-update 2.3.10 \
-    && composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/ \
-    && cp swoole_loader74.so /usr/local/lib/php/extensions/no-debug-non-zts-20190902/swoole_loader74.so
+    && composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
+
 #构建
 #docker build -f php7.4-swoole-work.Dockerfile -t php:7.4-swoole-fpm-v1.1 .
