@@ -19,6 +19,5 @@ jobs:
         env:
           IMAGE_TAG: ${{ github.sha }} # 用于标记容器版本号
         run: |
-          docker pull ashleykza/llava:1.4.6
-          docker tag ashleykza/llava:1.4.6 registry.cn-hangzhou.aliyuncs.com/cuiw/pytorch:llava1.4.6
-          docker push registry.cn-hangzhou.aliyuncs.com/cuiw/pytorch:llava1.4.6
+          docker build -f php7.4-swoole-work.Dockerfile -t php:$IMAGE_TAG .
+          docker push registry.cn-hangzhou.aliyuncs.com/cuiw/php:$IMAGE_TAG
