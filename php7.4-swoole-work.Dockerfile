@@ -1,4 +1,5 @@
 FROM php:7.4-fpm
+ADD docker-php-ext-swoole-loader.ini /usr/local/etc/php/conf.d/
 ADD swoole_loader74.so /usr/local/lib/php/extensions/no-debug-non-zts-20190902/
 RUN apt-get update && apt-get install -y git procps inetutils-ping net-tools unzip \
         libfreetype6-dev \
