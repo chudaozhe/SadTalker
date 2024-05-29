@@ -23,5 +23,7 @@ RUN apt-get update && apt-get install -y git procps inetutils-ping net-tools unz
     && composer self-update 2.3.10 \
     && composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 
+EXPOSE 8325
+
 #构建
 #docker build -f php7.4-swoole-work.Dockerfile -t php:7.4-swoole-fpm-v1.1 .
