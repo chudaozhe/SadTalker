@@ -23,7 +23,7 @@ RUN apt-get update && apt-get install -y git procps inetutils-ping net-tools unz
     && composer self-update 2.3.10 \
     && composer config -g repo.packagist composer https://mirrors.aliyun.com/composer/
 
-EXPOSE 8325
+EXPOSE 8321 8325
 
 CMD supervisord -c /etc/supervisor/supervisord.conf \
     && php-fpm
